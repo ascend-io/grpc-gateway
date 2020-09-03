@@ -36,3 +36,11 @@ go_proto_library(
     importpath = "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options",
     proto = ":options_proto",
 )
+
+load("@com_google_googleapis_imports//:imports.bzl", "py_proto_library")
+
+py_proto_library(
+    name = "options_py_proto",
+    visibility = ["//visibility:public"],
+    deps = [":options_proto"],
+)
